@@ -45,7 +45,7 @@ public class BookController {
     }
 
     @PatchMapping("/{id}/ownerupdate")
-    public String updateBook(@ModelAttribute("book") @Valid Book book, @ModelAttribute("persons") Person person,
+    public String updateBook(@ModelAttribute("book") Book book, @ModelAttribute("persons") Person person,
                              @PathVariable("id") int book_id) {
         int id = person.getId();
         bookDAO.updateOwner(id, book_id);
