@@ -46,11 +46,8 @@ public class BookController {
 
     @PatchMapping("/{id}/ownerupdate")
     public String updateBook(@ModelAttribute("book") @Valid Book book, @ModelAttribute("persons") Person person,
-                             BindingResult bindingResult, @PathVariable("id") int book_id) {
+                             @PathVariable("id") int book_id) {
         int id = person.getId();
-        if (bindingResult.hasErrors())
-            return "books";
-
         bookDAO.updateOwner(id, book_id);
         return "redirect:/books";
     }
