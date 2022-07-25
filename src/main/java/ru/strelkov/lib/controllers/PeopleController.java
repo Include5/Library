@@ -10,11 +10,8 @@ import ru.strelkov.lib.dao.PersonDAO;
 import ru.strelkov.lib.models.Book;
 import ru.strelkov.lib.models.Person;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
-/**
- * @author Neil Alishev
- */
 @Controller
 @RequestMapping("/people")
 public class PeopleController {

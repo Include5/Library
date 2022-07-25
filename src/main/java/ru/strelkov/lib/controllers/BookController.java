@@ -1,6 +1,5 @@
 package ru.strelkov.lib.controllers;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +9,8 @@ import ru.strelkov.lib.dao.BookDAO;
 import ru.strelkov.lib.dao.PersonDAO;
 import ru.strelkov.lib.models.Book;
 import ru.strelkov.lib.models.Person;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/books")

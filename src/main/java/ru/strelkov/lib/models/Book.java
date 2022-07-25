@@ -1,19 +1,25 @@
 package ru.strelkov.lib.models;
 
-import jakarta.validation.constraints.NotEmpty;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 public class Book {
     private int book_id;
 
     private Integer id;
 
-    @NotEmpty
+    @NotEmpty(message = "Название не может быть пустым")
+    @Size(min = 2, max = 100, message = "Название должен содержать от 2 до 100 символов")
     private String title;
 
-
+    @NotEmpty(message = "Имя автора не может быть пустым")
+    @Size(min = 2, max = 100, message = "Имя автора должно содержать от 2 до 100 символов")
     private String author;
 
-    @NotEmpty
+    @Positive(message = "Значение не может быть отрицательным")
+    @DecimalMin(value = "1900", message = "Дата создания книги не может быть меньше 1900")
     private int doc;
 
     public Book() {
